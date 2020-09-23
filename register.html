@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate(){
+
+            var uname = document.getElementById("uname").value;
+            var password = document.getElementById("pswd").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+
+            var array = ['Chandu','Ganavi','Prathi','Angana'];
+
+            if(uname == '')
+            {
+                alert('Enter user Name');
+                document.myForm.uname.focus();
+            }
+            else if(uname.length<5 || uname.length>15){
+                alert('Enter proper user name');
+                document.myForm.uname.focus();
+            } 
+            else if(password == ''){
+                alert('Enter the password');
+                document.myForm.pswd.focus();
+            }
+            else if(!password.match(/^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})/)){
+                alert('Enter the proper password');
+                document.myForm.pswd.value='';
+                document.myForm.pswd.focus();
+            }
+            else if(phone == ''){
+                alert('Enter the phone number');
+                document.myForm.phone.focus();
+            }
+            else if(!phone.match(/[0-9]{10}/)){
+                alert('Enter proper phone number');
+                document.myForm.phone.focus();
+            }
+            
+    else{
+            var flag = 0;
+            array.forEach(element => {
+                if(uname == element)
+                    flag = 1; 
+            });
+            if(flag==1){
+                document.getElementById("done").innerHTML = "Name already exists";
+            }
+            else{
+                document.getElementById("done").innerHTML = `Welcome ${uname}!! You are successfully registered`;
+            }
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="" name="myForm">
+        <table>
+            <tr>
+            <td>Name</td>
+            <td><input type="text" id="uname" required></td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td><input type="password" id="pswd"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" id="email"></td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td><input type="tel" id="phone"></td>
+            </tr>
+            <tr>
+                <td><input type="button" onclick="validate()" value="submit"></td>
+            </tr>
+        </table>
+        <div><span id="done"></span></div>
+    </form>
+</body>
+</html>

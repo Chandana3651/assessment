@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showroom(){
+            var name = document.getElementById("myList").value;
+            var laptopList = ['Lenovo','Sony','HP'];
+            var mobileList = ['iPhone','Samsung','Sony'];
+            var tvList = ['Sony','BPL','Philips']
+            if(name == "laptop")
+            {
+                document.getElementById("display").innerHTML = laptopList.join("<br>");
+            }
+            else if(name == "mobile")
+            {
+                document.getElementById("display").innerHTML = mobileList.join("<br>");
+            }
+            else if(name == "tv")
+            {
+                document.getElementById("display").innerHTML = tvList.join("<br>");
+            }            
+        }
+    </script>
+</head>
+<body>
+        <div>
+    Showroom <select name="list" id="myList" onchange="showroom()">
+        <option selected="" value="Default">--Select--</option>
+        <option value="laptop">Laptop</option>
+        <option value="mobile">Mobile</option>
+        <option value="tv">TV</option>
+    </select>
+    
+</div>
+<br>
+<div style="background-color: lightblue"> <span id="display"></span></div>
+</body>
+</html>
