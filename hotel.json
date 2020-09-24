@@ -1,0 +1,26 @@
+[{
+    "name":"SPR",
+    "city":"mysore",
+    "type":"veg",
+    "cuisine":["indian","chinese"]
+},{
+    "name":"highway18",
+    "city":"mysore",
+    "type":"veg",
+    "cuisine":["indian","chinese"]
+},{
+    "name":"hydrabad house",
+    "city":"banglore",
+    "type":"nonveg",
+    "cuisine":["indian"]
+},{
+    "name":"kstory",
+    "city":"chennai",
+    "type":"nonveg",
+    "cuisine":["indian","chinese","korean"]
+},{
+    "name":"the roost",
+    "city":"manglore",
+    "type":"veg",
+    "cuisine":["indian","chinese"]
+}]
